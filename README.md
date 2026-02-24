@@ -8,6 +8,7 @@ Watch any video or meeting in any language — get live subtitles translated to 
 ![Manifest V3](https://img.shields.io/badge/Manifest-V3-orange)
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Languages](https://img.shields.io/badge/Languages-61-blue)
+[![Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-Install-blue?logo=googlechrome)](https://chromewebstore.google.com/detail/ngn-%E2%80%93-ai-audio-transcript/ehfggcmpnfjmdmkgdhbgmhhmdkhciond)
 
 <p align="center">
   <img src="screenshots/demo.png" alt="NGN Live Subtitles" width="700">
@@ -50,6 +51,12 @@ Watch any video or meeting in any language — get live subtitles translated to 
 Sign up at [soniox.com](https://soniox.com) and get your API key.
 
 ### 2. Install the Extension
+
+**Option A — Chrome Web Store (recommended):**
+
+[**Install NGN from Chrome Web Store**](https://chromewebstore.google.com/detail/ngn-%E2%80%93-ai-audio-transcript/ehfggcmpnfjmdmkgdhbgmhhmdkhciond)
+
+**Option B — From source:**
 
 ```bash
 git clone https://github.com/SoloDax/ngn-transcription.git
@@ -200,7 +207,7 @@ Load as unpacked extension → make changes → reload.
 - [ ] Subtitle history / scroll-back
 - [ ] Real-time TTS dubbing via Cartesia
 - [ ] Server proxy mode (hide API key from client)
-- [ ] Chrome Web Store release
+- [x] Chrome Web Store release — [Install from Chrome Web Store](https://chromewebstore.google.com/detail/ngn-%E2%80%93-ai-audio-transcript/ehfggcmpnfjmdmkgdhbgmhhmdkhciond)
 
 ## 🤝 Contributing
 
