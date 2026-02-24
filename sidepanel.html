@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NGN</title>
+  <link rel="stylesheet" href="src/popup.css">
+  <style>body{width:100%;min-height:100vh}.transcript-area{height:calc(100vh - 250px);min-height:300px}</style>
+</head>
+<body>
+  <div id="app">
+    <header class="header">
+      <div class="header-left">
+        <div class="logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
+        <h1>NGN</h1>
+      </div>
+      <div class="header-right">
+        <button id="settings-btn" class="icon-btn" title="Settings"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button>
+      </div>
+    </header>
+    <main id="main-view">
+      <div id="status-bar" class="status-bar"><div class="status-indicator" id="status-indicator"><span class="status-dot"></span><span class="status-text">Ready</span></div><div class="char-count" id="char-count"></div></div>
+      <div class="transcript-area" id="transcript-area">
+        <div class="transcript-empty" id="transcript-empty"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg><p class="empty-title">Ready to transcribe</p><p class="empty-sub">Click Start to capture tab audio</p></div>
+        <div class="transcript-content" id="transcript-content"></div>
+      </div>
+      <div class="controls">
+        <button id="record-btn" class="record-btn"><svg id="mic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg><svg id="stop-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="6" width="12" height="12" rx="1"/></svg><span id="record-label">Start Recording</span></button>
+        <div class="secondary-controls">
+          <button id="caption-btn" class="small-btn active" title="Captions"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 15h4m-4-3h10"/></svg></button>
+          <button id="export-btn" class="small-btn" title="Export"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+          <button id="clear-btn" class="small-btn" title="Clear"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button>
+        </div>
+      </div>
+    </main>
+    <main id="settings-view" style="display:none">
+      <div class="settings-header"><button id="back-btn" class="icon-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></button><h2>Settings</h2></div>
+      <div class="settings-content">
+        <div class="setting-group"><label class="setting-label">API Key</label><div class="input-with-action"><input type="password" id="api-key" class="setting-input" placeholder="Enter Soniox API Key"><button id="toggle-key-btn" class="icon-btn small"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></div><p class="setting-hint">Get key at <a href="https://console.soniox.com" target="_blank">console.soniox.com</a></p></div>
+        <div class="setting-group"><label class="setting-label">🌐 Translate subtitles to</label><select id="translate-to" class="setting-input"><option value="">No translation</option><option value="he">עברית – Hebrew</option><option value="en">English</option><option value="ar">العربية – Arabic</option><option value="zh">中文 – Chinese</option><option value="ja">日本語 – Japanese</option><option value="ko">한국어 – Korean</option><option value="es">Español – Spanish</option><option value="fr">Français – French</option><option value="de">Deutsch – German</option><option value="it">Italiano – Italian</option><option value="pt">Português – Portuguese</option><option value="ru">Русский – Russian</option></select></div>
+        <div class="setting-group"><label class="setting-label">Caption Font Size</label><input type="range" id="caption-font-size" min="14" max="40" value="22" class="setting-range"><span id="font-size-value" class="range-value">22px</span></div>
+        <button id="test-btn" class="test-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Test Connection</button>
+        <div id="test-result" class="test-result"></div>
+        <button id="save-btn" class="save-btn">Save Settings</button>
+      </div>
+    </main>
+    <div id="toast" class="toast"></div>
+  </div>
+  <script src="src/popup.js" type="module"></script>
+</body>
+</html>
